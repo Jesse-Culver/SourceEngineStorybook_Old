@@ -230,7 +230,7 @@ END_DATADESC()
 // 
 //-----------------------------------------
 
-static ConVar cl_discord_appid("cl_discord_appid", "582595088719413250", FCVAR_DEVELOPMENTONLY | FCVAR_CHEAT);
+static ConVar cl_discord_appid("cl_discord_appid", "637699494229835787", FCVAR_DEVELOPMENTONLY | FCVAR_CHEAT);
 static int64_t startTimestamp = time(0);
 
 //
@@ -426,14 +426,14 @@ void MapbaseRPC_UpdateSteam( int iType, const char *pMapName )
 // Game-Specfic Image
 // These are specific to the Mapbase Discord application, so you'll want to modify this for your own mod.
 #if HL2_EPISODIC
-#define DISCORD_GAME_IMAGE "mb_logo_episodic"
-#define DISCORD_GAME_IMAGE_TEXT "Half-Life 2 Episodic"
+#define DISCORD_GAME_IMAGE "default_icon"
+#define DISCORD_GAME_IMAGE_TEXT "discord.gg/SourceEngine"
 #elif HL2_CLIENT_DLL
-#define DISCORD_GAME_IMAGE "mb_logo_hl2"
-#define DISCORD_GAME_IMAGE_TEXT "Half-Life 2"
+#define DISCORD_GAME_IMAGE "default_icon"
+#define DISCORD_GAME_IMAGE_TEXT "discord.gg/SourceEngine"
 #else
-#define DISCORD_GAME_IMAGE "mb_logo_general"
-#define DISCORD_GAME_IMAGE_TEXT "Mapbase"
+#define DISCORD_GAME_IMAGE "default_icon"
+#define DISCORD_GAME_IMAGE_TEXT "discord.gg/SourceEngine"
 #endif
 
 void MapbaseRPC_GetDiscordParameters( DiscordRichPresence &discordPresence, int iType, const char *pMapName )
@@ -501,8 +501,8 @@ void MapbaseRPC_GetDiscordParameters( DiscordRichPresence &discordPresence, int 
 		discordPresence.details = details;
 
 	// Generic Mapbase logo. Specific to the Mapbase Discord application.
-	discordPresence.smallImageKey = "mb_logo_general";
-	discordPresence.smallImageText = "Mapbase";
+	discordPresence.smallImageKey = "";
+	discordPresence.smallImageText = "discord.gg/SourceEngine";
 
 #ifdef DISCORD_GAME_IMAGE
 	discordPresence.largeImageKey = DISCORD_GAME_IMAGE;
